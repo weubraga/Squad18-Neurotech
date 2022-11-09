@@ -17,13 +17,16 @@ public class Hospital {
 
     }
 
-    @Column(name="crm", updatable = true, nullable = true)
+    @Column(name="id", updatable = true, nullable = false)
+    private int id;
+
+    @Column(name="crm", updatable = true, nullable = false)
     private int crm;
 
-    @Column(name="cob_convenio", updatable = true, nullable = true)
+    @Column(name="cob_convenio", updatable = true, nullable = false)
     private int cob_convenio;
 
-    @Column(name="tipo_atendimento", updatable = true, nullable = true)
+    @Column(name="tipo_atendimento", updatable = true, nullable = false)
     private String tipo_atendimento;
 
     public Hospital(String name) {

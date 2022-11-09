@@ -25,6 +25,45 @@ public class HospitalDto {
     @NotBlank
     private String tipo_atendimento;
 
+    public Id getId() {
+        return id;
+    }
+
+    public void setId(Id id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCrm() {
+        return crm;
+    }
+
+    public void setCrm(String crm) {
+        this.crm = crm;
+    }
+
+    public int getCob_convenio() {
+        return cob_convenio;
+    }
+
+    public void setCob_convenio(int cob_convenio) {
+        this.cob_convenio = cob_convenio;
+    }
+
+    public String getTipo_atendimento() {
+        return tipo_atendimento;
+    }
+
+    public void setTipo_atendimento(String tipo_atendimento) {
+        this.tipo_atendimento = tipo_atendimento;
+    }
 
     public HospitalDto(Id id) {
         this.id = id;
