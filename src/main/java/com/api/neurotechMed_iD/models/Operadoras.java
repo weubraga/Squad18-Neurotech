@@ -19,6 +19,18 @@ public class Operadoras {
 
     }
 
+    @OneToMany
+    private Paciente paciente;
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
 
     @Column(name="cnpj", updatable = true, nullable = true)
     private int cnpj;

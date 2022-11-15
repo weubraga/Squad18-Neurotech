@@ -27,6 +27,17 @@ public class Paciente {
         return hospital;
     }
 
+    @ManyToOne
+    private Operadoras operadoras;
+
+    public Operadoras getOperadoras() {
+        return operadoras;
+    }
+
+    public void setOperadoras(Operadoras operadoras) {
+        this.operadoras = operadoras;
+    }
+
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
     }
