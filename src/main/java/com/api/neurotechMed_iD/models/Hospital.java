@@ -1,5 +1,6 @@
 package com.api.neurotechMed_iD.models;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
 @Table(name = "TB_Hospital")
@@ -18,8 +19,16 @@ public class Hospital {
 
     }
 
-    @OneToMany(targetEntity = Paciente.class)
-    private List Paciente;
+    @OneToMany
+    private List<Paciente> pacientes;
+
+    public List<Paciente> getPacientes() {
+        return pacientes;
+    }
+
+    public void setPacientes(List<Paciente> pacientes) {
+        this.pacientes = pacientes;
+    }
 
     @Column(name="id", updatable = true, nullable = false)
     private int id;

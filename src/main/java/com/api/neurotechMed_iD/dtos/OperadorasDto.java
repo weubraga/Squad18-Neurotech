@@ -29,5 +29,11 @@ public class OperadorasDto {
     @NotEmpty
     private int tipo_plano;
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 }
