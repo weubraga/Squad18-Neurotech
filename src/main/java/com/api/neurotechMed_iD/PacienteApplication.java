@@ -2,6 +2,7 @@ package com.api.neurotechMed_iD;
 
 import com.api.neurotechMed_iD.models.Hospital;
 import com.api.neurotechMed_iD.repositories.HospitalRepository;
+import com.api.neurotechMed_iD.repositories.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class HospitalApplication {
+public class PacienteApplication {
 
     @Autowired
     private HospitalRepository hospitalRepository;
@@ -22,7 +23,7 @@ public class HospitalApplication {
     @GetMapping("/{name}")
     public String index(@PathVariable String name){
         hospitalRepository.save(new Hospital(name));
-        return "Teste Hospital";
+        return "Teste Paciente";
     }
 
 }

@@ -23,7 +23,7 @@ public class OperadorasApplication {
     @GetMapping("/{name}")
     public String index(@PathVariable String name){
         hospitalRepository.save(new Hospital(name));
-        return "Olá Mundo!";
+        return "Teste Operadora";
     }
 
 }
