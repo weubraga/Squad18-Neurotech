@@ -14,19 +14,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
+
 public class NeurotechMedIDApplication {
 
-	@Autowired
-	private HospitalRepository hospitalRepository;
+
 	public static void main(String[] args) {
 		SpringApplication.run(NeurotechMedIDApplication.class, args);
 	}
 
-	@GetMapping("/{name}")
-	public String index(@PathVariable String name){
-		hospitalRepository.save(new Hospital(name));
-		return "Olá Mundo!";
-	}
+
 
 }

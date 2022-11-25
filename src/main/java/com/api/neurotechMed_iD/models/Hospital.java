@@ -1,5 +1,7 @@
 package com.api.neurotechMed_iD.models;
 
+import com.api.neurotechMed_iD.models.HospitalCRUD;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
@@ -29,9 +31,6 @@ public class Hospital {
     public void setPacientes(List<Paciente> pacientes) {
         this.pacientes = pacientes;
     }
-
-    @Column(name="id", updatable = true, nullable = false)
-    private int id;
 
     @Column(name="crm", updatable = true, nullable = false)
     private int crm;

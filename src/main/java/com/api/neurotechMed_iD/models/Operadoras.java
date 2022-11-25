@@ -1,6 +1,8 @@
 package com.api.neurotechMed_iD.models;
 
 import javax.persistence.*;
+import java.util.List;
+
 @Table(name = "TB_Operadoras")
 @Entity
 
@@ -20,15 +22,14 @@ public class Operadoras {
     }
 
     @OneToMany
-    private Paciente paciente;
+    private List<Paciente> paciente;
 
-    public Paciente getPaciente() {
+    public List<Paciente> getPacientes() {
         return paciente;
     }
 
 
-
-    public void setPaciente(Paciente paciente) {
+    public void setPaciente(List<Paciente> paciente) {
         this.paciente = paciente;
     }
 

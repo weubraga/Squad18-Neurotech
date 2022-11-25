@@ -13,10 +13,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/NeurotechMedID")
 public class OperadorasController {
 
-    final NeurotechMedIDApplication neurotechMedIDApplication;
-
-    public OperadorasController(NeurotechMedIDApplication neurotechMedIDApplication) {
-        this.neurotechMedIDApplication = neurotechMedIDApplication;
-    }
 
 }
