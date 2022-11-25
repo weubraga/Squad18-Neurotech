@@ -30,6 +30,14 @@ public class PacienteDto {
     @NotBlank
     private String status;
 
+    public Id getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(Id cpf) {
+        this.cpf = cpf;
+    }
+
     public PacienteDto(Id cpf) {
         this.cpf = cpf;
     }
