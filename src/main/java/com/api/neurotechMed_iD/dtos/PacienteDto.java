@@ -21,7 +21,7 @@ public class PacienteDto {
     private Id cpf;
 
     @NotBlank
-    @Size(max=100)
+    @Size(max = 100)
     private String name;
 
     @NotBlank
@@ -38,7 +38,27 @@ public class PacienteDto {
         this.cpf = cpf;
     }
 
-    public PacienteDto(Id cpf) {
-        this.cpf = cpf;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getNum_carteirinha() {
+        return num_carteirinha;
+    }
+
+    public void setNum_carteirinha(int num_carteirinha) {
+        this.num_carteirinha = num_carteirinha;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

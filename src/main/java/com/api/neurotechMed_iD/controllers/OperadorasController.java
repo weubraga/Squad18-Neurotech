@@ -10,12 +10,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/operadoras")
+@RequestMapping("/operadoras/api")
 public class OperadorasController {
     final OperadorasService operadorasService;
 
@@ -34,16 +35,45 @@ public class OperadorasController {
         return ResponseEntity.status(HttpStatus.CREATED).body(operadorasService.save(operadoras));
 
     }
-    /*@GetMapping
-    public ResponseEntity<Page<Operadoras>> getAllOperadoras(){
+    @GetMapping
+    public ResponseEntity<List<Operadoras>> getAllOperadoras(){
         return ResponseEntity.status(HttpStatus.OK).body(operadorasService.findAll());
-    }*/
+    }
 
-    /*@GetMapping("/{id}")
-    public ResponseEntity<Object> getOneOperadoras(@PathVariable(value = "id") UUID id){
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> getOneOperadoras(@PathVariable(value = "id") int id){
         Optional<Operadoras> operadorasOptional = operadorasService.findById(id);
-        return operadorasOptional.<ResponseEntity<Object>>map(operadoras -> ResponseEntity.status(HttpStatus.OK).body(operadoras)).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("ID not found."));
-    }*/
+        if(!operadorasOptional.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Id not found");
+        } return ResponseEntity.status(HttpStatus.OK).body(operadorasOptional.get());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> deleteOperadoras(@PathVariable(value = "id") int id){
+        Optional<Operadoras> operadorasOptional = operadorasService.findById(id);
+        if (!operadorasOptional.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ID not found.");
+        }
+        operadorasService.delete(operadorasOptional.get());
+        return ResponseEntity.status(HttpStatus.OK).body("ID deleted successfully.");
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updateOperadoras(@PathVariable(value = "id") int id,
+                                                    @RequestBody @Valid OperadoraDto operadoraDto){
+        Optional<Operadoras> operadorasOptional = operadorasService.findById(id);
+        if (!operadorasOptional.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Operadora not found.");
+        }
+        Operadoras operadoras = new Operadoras();
+        //operadoras.setCnpj(operadoras.getCnpj()); Vamos usar cnpj como ID?
+        operadoras.setEspecialidades(operadoras.getEspecialidades());
+        operadoras.setAreas_atuacao(operadoras.getAreas_atuacao());
+        operadoras.setTipo_plano(operadoras.getTipo_plano());
+        operadoras.setStatus(operadoras.getStatus());
+        return ResponseEntity.status(HttpStatus.OK).body(operadorasService.save(operadoras));
+
+    }
 
 
 }

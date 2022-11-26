@@ -13,37 +13,18 @@ public class Paciente {
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
-    private int iD;
+    private Id iD;
     @Column
     private String name;
-    public Paciente() {
-
-    }
 
     @ManyToOne
     private Hospital hospital;
 
-    public Hospital getHospital() {
-        return hospital;
-    }
-
     @ManyToOne
     private Operadoras operadoras;
 
-    public Operadoras getOperadoras() {
-        return operadoras;
-    }
-
-    public void setOperadoras(Operadoras operadoras) {
-        this.operadoras = operadoras;
-    }
-
-    public void setHospital(Hospital hospital) {
-        this.hospital = hospital;
-    }
-
     @Column(name="cpf", updatable = true, nullable = true)
-    private int cpf;
+    private Id cpf;
 
     @Column(name="id_plano", updatable = true, nullable = true)
     private int id_plano;
@@ -54,12 +35,15 @@ public class Paciente {
     @Column(name="status", updatable = true, nullable = true)
     private String status;
 
-
-    public String getName() {
-        return name;
+    public Id getiD() {
+        return iD;
     }
 
-    public String getcrm() {
+    public void setiD(Id iD) {
+        this.iD = iD;
+    }
+
+    public String getName() {
         return name;
     }
 
@@ -67,11 +51,51 @@ public class Paciente {
         this.name = name;
     }
 
-    public int getiD() {
-        return iD;
+    public Hospital getHospital() {
+        return hospital;
     }
 
-    public void setiD(int iD) {
-        this.iD = iD;
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+
+    public Operadoras getOperadoras() {
+        return operadoras;
+    }
+
+    public void setOperadoras(Operadoras operadoras) {
+        this.operadoras = operadoras;
+    }
+
+    public Id getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(Id cpf) {
+        this.cpf = cpf;
+    }
+
+    public int getId_plano() {
+        return id_plano;
+    }
+
+    public void setId_plano(int id_plano) {
+        this.id_plano = id_plano;
+    }
+
+    public String getId_face() {
+        return id_face;
+    }
+
+    public void setId_face(String id_face) {
+        this.id_face = id_face;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

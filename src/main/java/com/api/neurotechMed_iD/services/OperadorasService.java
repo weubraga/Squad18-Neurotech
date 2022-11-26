@@ -27,10 +27,16 @@ public class OperadorasService {
     }
 
     public List<Operadoras> findAll() {
+
         return operadorasRepository.findAll();
     }
 
     public Optional<Operadoras> findById(int iD) {
+
         return operadorasRepository.findById(iD);
+    }
+    @Transactional
+    public void delete(Operadoras operadoras) {
+        operadorasRepository.delete(operadoras);
     }
 }
