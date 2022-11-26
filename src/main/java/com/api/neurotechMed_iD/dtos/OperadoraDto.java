@@ -36,4 +36,53 @@ public class OperadoraDto {
     public OperadoraDto(Id cnpj) {
         this.cnpj = cnpj;
     }
+
+
+    public Id getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(Id cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getTipos_de_planos() {
+        return tipos_de_planos;
+    }
+
+    public void setTipos_de_planos(int tipos_de_planos) {
+        this.tipos_de_planos = tipos_de_planos;
+    }
+
+    public String getEndereço_sede() {
+        return endereço_sede;
+    }
+
+    public void setEndereço_sede(String endereço_sede) {
+        this.endereço_sede = endereço_sede;
+    }
+
+    public String getRegioes() {
+        return regioes;
+    }
+
+    public void setRegioes(String regioes) {
+        this.regioes = regioes;
+    }
+
+    public String getEspecialidades() {
+        return especialidades;
+    }
+
+    public void setEspecialidades(String especialidades) {
+        this.especialidades = especialidades;
+    }
 }
