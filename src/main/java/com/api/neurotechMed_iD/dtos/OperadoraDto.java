@@ -38,7 +38,7 @@ public class OperadoraDto {
     }
 
 
-    public Id getCnpj() {
+    public int getCnpj() {
         return cnpj;
     }
 

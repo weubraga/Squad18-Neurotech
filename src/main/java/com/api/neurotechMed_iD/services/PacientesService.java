@@ -19,7 +19,7 @@ public class PacientesService {
     public Paciente save(Paciente paciente){
         return pacienteRepository.save(paciente);
     }
-    public boolean existsByCpf(Id cpf) {
+    public boolean existsByCpf(int cpf) {
         return pacienteRepository.existsByCpf(cpf);
 
     }

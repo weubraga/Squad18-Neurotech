@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.Id;
 import java.util.Optional;
-import java.util.UUID;
 
 @Repository
 public interface PacienteRepository extends JpaRepository<Paciente, Integer> {

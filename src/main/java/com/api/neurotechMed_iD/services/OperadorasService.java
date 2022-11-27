@@ -21,7 +21,7 @@ public class OperadorasService {
         return operadorasRepository.save(operadoras);
     }
 
-    public boolean existsByCnpj(Id cnpj) {
+    public boolean existsByCnpj(int cnpj) {
         return operadorasRepository.existsByCnpj(cnpj);
 
     }

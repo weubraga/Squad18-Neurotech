@@ -30,7 +30,7 @@ public class PacienteDto {
     @NotBlank
     private String status;
 
-    public Id getCpf() {
+    public int getCpf() {
         return cpf;
     }
 

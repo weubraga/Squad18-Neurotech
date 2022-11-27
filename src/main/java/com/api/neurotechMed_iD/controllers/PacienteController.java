@@ -13,14 +13,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/pacientes/api")
 public class PacienteController {
-
     final PacientesService pacientesService;
+
     public PacienteController(PacientesService pacientesService) {
         this.pacientesService = pacientesService;
     }
