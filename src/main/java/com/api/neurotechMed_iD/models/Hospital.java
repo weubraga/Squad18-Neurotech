@@ -1,6 +1,7 @@
 package com.api.neurotechMed_iD.models;
 
-import com.api.neurotechMed_iD.models.HospitalCRUD;
+import javax.persistence.*;
+import java.util.List;
 
 import java.util.ArrayList;
 import java.util.List;
