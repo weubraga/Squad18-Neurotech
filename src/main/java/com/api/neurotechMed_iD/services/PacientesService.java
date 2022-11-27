@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 public class PacientesService {
     final PacienteRepository pacienteRepository;
@@ -28,7 +27,7 @@ public class PacientesService {
         return pacienteRepository.findAll();
     }
 
-    public Optional<Paciente> findById(UUID cpf) {
+    public Optional<Paciente> findById(int cpf) {
         return pacienteRepository.findById(cpf);
     }
     @Transactional

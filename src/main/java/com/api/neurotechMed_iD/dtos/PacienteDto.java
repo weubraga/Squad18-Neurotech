@@ -18,7 +18,7 @@ public class PacienteDto {
 
     @NotNull
     @Size(max = 11)
-    private Id cpf;
+    private int cpf;
 
     @NotBlank
     @Size(max = 100)
@@ -34,7 +34,7 @@ public class PacienteDto {
         return cpf;
     }
 
-    public void setCpf(Id cpf) {
+    public void setCpf(int cpf) {
         this.cpf = cpf;
     }
 

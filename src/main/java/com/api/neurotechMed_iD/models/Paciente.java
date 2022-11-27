@@ -13,7 +13,7 @@ public class Paciente {
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
-    private Id iD;
+    private int iD;
     @Column
     private String name;
 
@@ -24,7 +24,7 @@ public class Paciente {
     private Operadoras operadoras;
 
     @Column(name="cpf", updatable = true, nullable = true)
-    private Id cpf;
+    private int cpf;
 
     @Column(name="id_plano", updatable = true, nullable = true)
     private int id_plano;
@@ -35,11 +35,11 @@ public class Paciente {
     @Column(name="status", updatable = true, nullable = true)
     private String status;
 
-    public Id getiD() {
+    public int getiD() {
         return iD;
     }
 
-    public void setiD(Id iD) {
+    public void setiD(int iD) {
         this.iD = iD;
     }
 
@@ -67,11 +67,11 @@ public class Paciente {
         this.operadoras = operadoras;
     }
 
-    public Id getCpf() {
+    public int getCpf() {
         return cpf;
     }
 
-    public void setCpf(Id cpf) {
+    public void setCpf(int cpf) {
         this.cpf = cpf;
     }
 

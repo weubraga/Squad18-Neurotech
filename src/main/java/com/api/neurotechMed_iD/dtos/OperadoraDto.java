@@ -19,7 +19,7 @@ public class OperadoraDto {
 
     @NotNull
     @Size(max = 14)
-    private Id cnpj;
+    private int cnpj;
 
     @NotBlank
     @Size(max=100)
@@ -33,7 +33,7 @@ public class OperadoraDto {
     private String regioes;
     private String especialidades;
 
-    public OperadoraDto(Id cnpj) {
+    public OperadoraDto(int cnpj) {
         this.cnpj = cnpj;
     }
 
@@ -42,7 +42,7 @@ public class OperadoraDto {
         return cnpj;
     }
 
-    public void setCnpj(Id cnpj) {
+    public void setCnpj(int cnpj) {
         this.cnpj = cnpj;
     }
 

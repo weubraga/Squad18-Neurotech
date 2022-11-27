@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Id;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
@@ -43,14 +42,14 @@ public class PacienteController {
     }
 
     @GetMapping("/{cpf}")
-    public ResponseEntity<Object> getOnePacientes(@PathVariable(value = "cpf") UUID cpf){
+    public ResponseEntity<Object> getOnePacientes(@PathVariable(value = "cpf") int cpf){
         Optional<Paciente> pacienteOptional = pacientesService.findById(cpf);
         if(!pacienteOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("CPF not found");
         } return ResponseEntity.status(HttpStatus.OK).body(pacienteOptional.get());
     }
     @DeleteMapping("/{cpf}")
-    public ResponseEntity<Object> deletePaciente(@PathVariable(value = "cpf") UUID cpf){
+    public ResponseEntity<Object> deletePaciente(@PathVariable(value = "cpf") int cpf){
         Optional<Paciente> pacienteOptional = pacientesService.findById(cpf);
         if (!pacienteOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("CPF not found.");
@@ -60,7 +59,7 @@ public class PacienteController {
     }
 
     @PutMapping("/{cpf}")
-    public ResponseEntity<Object> updatePaciente(@PathVariable(value = "cpf") UUID cpf,
+    public ResponseEntity<Object> updatePaciente(@PathVariable(value = "cpf") int cpf,
                                                    @RequestBody @Valid PacienteDto pacienteDto){
         Optional<Paciente> pacienteOptional = pacientesService.findById(cpf);
         if (!pacienteOptional.isPresent()) {
