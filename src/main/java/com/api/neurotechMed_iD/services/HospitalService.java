@@ -2,18 +2,18 @@ package com.api.neurotechMed_iD.services;
 
 import com.api.neurotechMed_iD.models.Hospital;
 import com.api.neurotechMed_iD.repositories.HospitalRepository;
+import org.springframework.stereotype.Service;
+
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
+@Service
 public class HospitalService {
-
     final HospitalRepository hospitalRepository;
     public HospitalService(HospitalRepository hospitalRepository) {
         this.hospitalRepository = hospitalRepository;
-
     }
     @Transactional
     public Hospital save(Hospital hospital){

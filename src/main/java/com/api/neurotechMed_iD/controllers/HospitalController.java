@@ -17,12 +17,14 @@ import java.util.UUID;
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/hospital/api")
+
 public class HospitalController {
     final HospitalService hospitalService;
 
     public HospitalController(HospitalService hospitalService) {
         this.hospitalService = hospitalService;
     }
+
 
     @PostMapping
     public ResponseEntity<Object> saveHospital(@RequestBody @Valid HospitalDto hospitalDto) {

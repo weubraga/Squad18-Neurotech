@@ -42,8 +42,8 @@ public class PacienteController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Object> getOnePacientes(@PathVariable(value = "id") UUID cpf){
-        Optional<Paciente> pacienteOptional = pacientesService.findById(cpf);
+    public ResponseEntity<Object> getOnePacientes(@PathVariable(value = "id") UUID id){
+        Optional<Paciente> pacienteOptional = pacientesService.findById(id);
         if(!pacienteOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ID not found");
         } return ResponseEntity.status(HttpStatus.OK).body(pacienteOptional.get());

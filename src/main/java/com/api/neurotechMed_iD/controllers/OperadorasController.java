@@ -68,7 +68,7 @@ public class OperadorasController {
         }
         Operadoras operadoras = new Operadoras();
         BeanUtils.copyProperties(operadoraDto, operadoras);
-        operadoras.setiD(operadorasOptional.get().getiD());
+        operadoras.setId(operadorasOptional.get().getId());
         return ResponseEntity.status(HttpStatus.OK).body(operadorasService.save(operadoras));
 
     }

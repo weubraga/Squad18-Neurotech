@@ -2,12 +2,14 @@ package com.api.neurotechMed_iD.services;
 
 import com.api.neurotechMed_iD.models.Paciente;
 import com.api.neurotechMed_iD.repositories.PacienteRepository;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class PacientesService {
     final PacienteRepository pacienteRepository;
     public PacientesService(PacienteRepository pacienteRepository) {

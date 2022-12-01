@@ -3,10 +3,7 @@ package com.api.neurotechMed_iD.models;
 import javax.persistence.*;
 import java.util.List;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
-import javax.persistence.*;
 @Table(name = "TB_Hospital")
 @Entity
 

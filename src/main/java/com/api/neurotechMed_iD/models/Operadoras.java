@@ -12,7 +12,7 @@ public class Operadoras {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID iD;
+    private UUID id;
 
     @Column
     private String name;
@@ -35,12 +35,12 @@ public class Operadoras {
     private String status;
 
 
-    public UUID getiD() {
-        return iD;
+    public UUID getId() {
+        return id;
     }
 
-    public void setiD(UUID iD) {
-        this.iD = iD;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getName() {
