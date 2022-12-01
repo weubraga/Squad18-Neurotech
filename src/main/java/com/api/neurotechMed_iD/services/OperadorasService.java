@@ -4,7 +4,6 @@ import com.api.neurotechMed_iD.models.Operadoras;
 import com.api.neurotechMed_iD.repositories.OperadorasRepository;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Id;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +30,7 @@ public class OperadorasService {
         return operadorasRepository.findAll();
     }
 
-    public Optional<Operadoras> findById(int iD) {
+    public Optional<Operadoras> findById(UUID iD) {
 
         return operadorasRepository.findById(iD);
     }

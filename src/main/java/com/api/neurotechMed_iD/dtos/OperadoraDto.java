@@ -20,22 +20,18 @@ public class OperadoraDto {
     @NotNull
     @Size(max = 14)
     private int cnpj;
-
     @NotBlank
     @Size(max=100)
     private String name;
-
     @NotBlank
     @Size(max=50)
     private int tipos_de_planos;
-
+    @NotBlank
     private String endereço_sede;
+    @NotBlank
     private String regioes;
+    @NotBlank
     private String especialidades;
-
-    public OperadoraDto(int cnpj) {
-        this.cnpj = cnpj;
-    }
 
 
     public int getCnpj() {

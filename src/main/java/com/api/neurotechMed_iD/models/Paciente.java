@@ -2,6 +2,7 @@ package com.api.neurotechMed_iD.models;
 
 
 import java.util.List;
+import java.util.UUID;
 import javax.persistence.*;
 @Table(name = "TB_Paciente")
 @Entity
@@ -13,7 +14,7 @@ public class Paciente {
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
-    private int iD;
+    private UUID iD;
     @Column
     private String name;
 
@@ -35,11 +36,11 @@ public class Paciente {
     @Column(name="status", updatable = true, nullable = true)
     private String status;
 
-    public int getiD() {
+    public UUID getiD() {
         return iD;
     }
 
-    public void setiD(int iD) {
+    public void setiD(UUID iD) {
         this.iD = iD;
     }
 

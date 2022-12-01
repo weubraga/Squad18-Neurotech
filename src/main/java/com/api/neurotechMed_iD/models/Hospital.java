@@ -5,33 +5,20 @@ import java.util.List;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import javax.persistence.*;
 @Table(name = "TB_Hospital")
 @Entity
 
 public class Hospital {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
-    private int iD;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
 
     @Column
     private String name;
-    public Hospital() {
-
-    }
-
     @OneToMany
     private List<Paciente> pacientes;
-
-    public List<Paciente> getPacientes() {
-        return pacientes;
-    }
-
-    public void setPacientes(List<Paciente> pacientes) {
-        this.pacientes = pacientes;
-    }
 
     @Column(name="crm", updatable = true, nullable = false)
     private int crm;
@@ -42,16 +29,16 @@ public class Hospital {
     @Column(name="tipo_atendimento", updatable = true, nullable = false)
     private String tipo_atendimento;
 
-    public Hospital(String name) {
-        this.name = name;
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getName() {
-        return name;
-    }
-
-
-    public String getcrm() {
         return name;
     }
 
@@ -59,12 +46,36 @@ public class Hospital {
         this.name = name;
     }
 
-    public int getiD() {
-        return iD;
+    public List<Paciente> getPacientes() {
+        return pacientes;
     }
 
-    public void setiD(int iD) {
-        this.iD = iD;
+    public void setPacientes(List<Paciente> pacientes) {
+        this.pacientes = pacientes;
+    }
+
+    public int getCrm() {
+        return crm;
+    }
+
+    public void setCrm(int crm) {
+        this.crm = crm;
+    }
+
+    public int getCob_convenio() {
+        return cob_convenio;
+    }
+
+    public void setCob_convenio(int cob_convenio) {
+        this.cob_convenio = cob_convenio;
+    }
+
+    public String getTipo_atendimento() {
+        return tipo_atendimento;
+    }
+
+    public void setTipo_atendimento(String tipo_atendimento) {
+        this.tipo_atendimento = tipo_atendimento;
     }
 }
 

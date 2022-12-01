@@ -19,14 +19,12 @@ public class PacienteDto {
     @NotNull
     @Size(max = 11)
     private int cpf;
-
     @NotBlank
     @Size(max = 100)
     private String name;
-
     @NotBlank
+    @Size(max = 20)
     private int num_carteirinha;
-
     @NotBlank
     private String status;
 

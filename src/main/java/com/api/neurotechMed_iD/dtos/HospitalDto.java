@@ -1,7 +1,6 @@
 package com.api.neurotechMed_iD.dtos;
 
 
-import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -10,28 +9,21 @@ import javax.validation.constraints.Size;
 public class HospitalDto {
 
     @NotNull
-    @Size(max = 6)
-    private Id id;
-
-    @NotBlank
+    @Size(max = 10)
     private String name;
 
     @NotEmpty
+    @Size(max = 10)
     private String crm;
 
     @NotBlank
+    @Size(max = 10)
     private int cob_convenio;
 
     @NotBlank
+    @Size(max = 10)
     private String tipo_atendimento;
 
-    public Id getId() {
-        return id;
-    }
-
-    public void setId(Id id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -63,9 +55,5 @@ public class HospitalDto {
 
     public void setTipo_atendimento(String tipo_atendimento) {
         this.tipo_atendimento = tipo_atendimento;
-    }
-
-    public HospitalDto(Id id) {
-        this.id = id;
     }
 }

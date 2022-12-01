@@ -3,10 +3,10 @@ package com.api.neurotechMed_iD.services;
 import com.api.neurotechMed_iD.models.Paciente;
 import com.api.neurotechMed_iD.repositories.PacienteRepository;
 
-import javax.persistence.Id;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public class PacientesService {
     final PacienteRepository pacienteRepository;
@@ -27,7 +27,7 @@ public class PacientesService {
         return pacienteRepository.findAll();
     }
 
-    public Optional<Paciente> findById(int cpf) {
+    public Optional<Paciente> findById(UUID cpf) {
         return pacienteRepository.findById(cpf);
     }
     @Transactional

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -41,7 +42,7 @@ public class OperadorasController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Object> getOneOperadoras(@PathVariable(value = "id") int id){
+    public ResponseEntity<Object> getOneOperadoras(@PathVariable(value = "id") UUID id){
         Optional<Operadoras> operadorasOptional = operadorasService.findById(id);
         if(!operadorasOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Id not found");
@@ -49,7 +50,7 @@ public class OperadorasController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteOperadoras(@PathVariable(value = "id") int id){
+    public ResponseEntity<Object> deleteOperadoras(@PathVariable(value = "id") UUID id){
         Optional<Operadoras> operadorasOptional = operadorasService.findById(id);
         if (!operadorasOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ID not found.");
@@ -59,18 +60,15 @@ public class OperadorasController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Object> updateOperadoras(@PathVariable(value = "id") int id,
+    public ResponseEntity<Object> updateOperadoras(@PathVariable(value = "id") UUID id,
                                                     @RequestBody @Valid OperadoraDto operadoraDto){
         Optional<Operadoras> operadorasOptional = operadorasService.findById(id);
         if (!operadorasOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Operadora not found.");
         }
         Operadoras operadoras = new Operadoras();
-        //operadoras.setCnpj(operadoras.getCnpj()); Vamos usar cnpj como ID?
-        operadoras.setEspecialidades(operadoras.getEspecialidades());
-        operadoras.setAreas_atuacao(operadoras.getAreas_atuacao());
-        operadoras.setTipo_plano(operadoras.getTipo_plano());
-        operadoras.setStatus(operadoras.getStatus());
+        BeanUtils.copyProperties(operadoraDto, operadoras);
+        operadoras.setiD(operadorasOptional.get().getiD());
         return ResponseEntity.status(HttpStatus.OK).body(operadorasService.save(operadoras));
 
     }

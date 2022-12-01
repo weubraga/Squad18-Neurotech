@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -40,27 +41,27 @@ public class PacienteController {
         return ResponseEntity.status(HttpStatus.OK).body(pacientesService.findAll());
     }
 
-    @GetMapping("/{cpf}")
-    public ResponseEntity<Object> getOnePacientes(@PathVariable(value = "cpf") int cpf){
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> getOnePacientes(@PathVariable(value = "id") UUID cpf){
         Optional<Paciente> pacienteOptional = pacientesService.findById(cpf);
         if(!pacienteOptional.isPresent()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("CPF not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ID not found");
         } return ResponseEntity.status(HttpStatus.OK).body(pacienteOptional.get());
     }
-    @DeleteMapping("/{cpf}")
-    public ResponseEntity<Object> deletePaciente(@PathVariable(value = "cpf") int cpf){
-        Optional<Paciente> pacienteOptional = pacientesService.findById(cpf);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> deletePaciente(@PathVariable(value = "id") UUID id){
+        Optional<Paciente> pacienteOptional = pacientesService.findById(id);
         if (!pacienteOptional.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("CPF not found.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ID not found.");
         }
         pacientesService.delete(pacienteOptional.get());
-        return ResponseEntity.status(HttpStatus.OK).body("CPF deleted successfully.");
+        return ResponseEntity.status(HttpStatus.OK).body("ID deleted successfully.");
     }
 
-    @PutMapping("/{cpf}")
-    public ResponseEntity<Object> updatePaciente(@PathVariable(value = "cpf") int cpf,
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updatePaciente(@PathVariable(value = "id") UUID id,
                                                    @RequestBody @Valid PacienteDto pacienteDto){
-        Optional<Paciente> pacienteOptional = pacientesService.findById(cpf);
+        Optional<Paciente> pacienteOptional = pacientesService.findById(id);
         if (!pacienteOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Paciente not found.");
         }
