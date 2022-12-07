@@ -1,7 +1,7 @@
 # Squad18-Neurotech
 Repositório do banco de dados da aplicação Med.iD
 
-<img src="C:\Users\thifa\OneDrive\Área de Trabalho\Neurotech Residencia\Squad18-Neurotech\src\image\MedId-Logo.jpeg"/>
+<img src="https://github.com/weubraga/Squad18-Neurotech/tree/master/src/image/MedId-Logo.jpeg">
 
 Uma das principais reclamações de usuários de planos de saúde é a dificuldade e o transtorno causado pela falta de documentos quando buscam atendimento. Esse problema ocasiona perda de tempo, prejuízos financeiros e constrangimentos aos usuários.
 
