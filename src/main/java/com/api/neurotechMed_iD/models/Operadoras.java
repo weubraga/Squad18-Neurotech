@@ -11,7 +11,7 @@ import java.util.UUID;
 public class Operadoras {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     @Column
@@ -20,10 +20,10 @@ public class Operadoras {
     private List<Paciente> paciente;
 
     @Column(name="cnpj", updatable = true, nullable = true)
-    private int cnpj;
+    private String cnpj;
 
     @Column(name="tipo_plano", updatable = true, nullable = true)
-    private int tipo_plano;
+    private String tipo_plano;
 
     @Column(name="areas_atuacao", updatable = true, nullable = true)
     private String areas_atuacao;
@@ -59,19 +59,19 @@ public class Operadoras {
         this.paciente = paciente;
     }
 
-    public int getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(int cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
-    public int getTipo_plano() {
+    public String getTipo_plano() {
         return tipo_plano;
     }
 
-    public void setTipo_plano(int tipo_plano) {
+    public void setTipo_plano(String tipo_plano) {
         this.tipo_plano = tipo_plano;
     }
 

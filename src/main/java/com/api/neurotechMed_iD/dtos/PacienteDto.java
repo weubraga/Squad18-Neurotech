@@ -16,23 +16,23 @@ import javax.validation.constraints.Size;
 
 public class PacienteDto {
 
-    @NotNull
+    @NotBlank
     @Size(max = 11)
-    private int cpf;
+    private String cpf;
     @NotBlank
     @Size(max = 100)
     private String name;
     @NotBlank
     @Size(max = 20)
-    private int num_carteirinha;
+    private String num_carteirinha;
     @NotBlank
     private String status;
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -44,11 +44,11 @@ public class PacienteDto {
         this.name = name;
     }
 
-    public int getNum_carteirinha() {
+    public String getNum_carteirinha() {
         return num_carteirinha;
     }
 
-    public void setNum_carteirinha(int num_carteirinha) {
+    public void setNum_carteirinha(String num_carteirinha) {
         this.num_carteirinha = num_carteirinha;
     }
 

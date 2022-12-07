@@ -1,9 +1,9 @@
 package com.api.neurotechMed_iD.dtos;
 
 
-import javax.persistence.Id;
+
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /* Operadora:
@@ -17,28 +17,31 @@ import javax.validation.constraints.Size;
 
 public class OperadoraDto {
 
-    @NotNull
+    @NotBlank
     @Size(max = 14)
-    private int cnpj;
+    private String cnpj;
     @NotBlank
     @Size(max=100)
     private String name;
     @NotBlank
+    private String areasDeAtuacao;
+    @NotBlank
     @Size(max=50)
-    private int tipos_de_planos;
+    private String tipos_de_planos;
     @NotBlank
     private String endereço_sede;
     @NotBlank
     private String regioes;
     @NotBlank
     private String especialidades;
+    @NotBlank
+    private String status;
 
-
-    public int getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(int cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
@@ -50,11 +53,19 @@ public class OperadoraDto {
         this.name = name;
     }
 
-    public int getTipos_de_planos() {
+    public String getAreasDeAtuacao() {
+        return areasDeAtuacao;
+    }
+
+    public void setAreasDeAtuacao(String areasDeAtuacao) {
+        this.areasDeAtuacao = areasDeAtuacao;
+    }
+
+    public String getTipos_de_planos() {
         return tipos_de_planos;
     }
 
-    public void setTipos_de_planos(int tipos_de_planos) {
+    public void setTipos_de_planos(String tipos_de_planos) {
         this.tipos_de_planos = tipos_de_planos;
     }
 
@@ -80,5 +91,13 @@ public class OperadoraDto {
 
     public void setEspecialidades(String especialidades) {
         this.especialidades = especialidades;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -21,7 +21,7 @@ public class PacientesService {
     public Paciente save(Paciente paciente){
         return pacienteRepository.save(paciente);
     }
-    public boolean existsByCpf(int cpf) {
+    public boolean existsByCpf(String cpf) {
         return pacienteRepository.existsByCpf(cpf);
 
     }

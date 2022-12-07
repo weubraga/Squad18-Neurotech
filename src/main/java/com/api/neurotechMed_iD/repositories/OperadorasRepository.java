@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Repository
 public interface OperadorasRepository extends JpaRepository<Operadoras, Integer> {
-    boolean existsByCnpj(int cnpj);
+    boolean existsByCnpj(String cnpj);
 
     Optional<Operadoras> findById(UUID iD);
 }

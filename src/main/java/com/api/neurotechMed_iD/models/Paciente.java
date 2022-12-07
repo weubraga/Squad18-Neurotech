@@ -11,9 +11,7 @@ import javax.persistence.*;
 public class Paciente {
 
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column
     private String name;
@@ -25,10 +23,10 @@ public class Paciente {
     private Operadoras operadoras;
 
     @Column(name="cpf", updatable = true, nullable = true)
-    private int cpf;
+    private String cpf;
 
     @Column(name="id_plano", updatable = true, nullable = true)
-    private int id_plano;
+    private String id_plano;
 
     @Column(name="id_face", updatable = true, nullable = true)
     private String id_face;
@@ -68,19 +66,19 @@ public class Paciente {
         this.operadoras = operadoras;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public int getId_plano() {
+    public String getId_plano() {
         return id_plano;
     }
 
-    public void setId_plano(int id_plano) {
+    public void setId_plano(String id_plano) {
         this.id_plano = id_plano;
     }
 
