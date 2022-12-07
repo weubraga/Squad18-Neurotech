@@ -1,6 +1,6 @@
 package com.api.neurotechMed_iD.repositories;
 
-import com.api.neurotechMed_iD.models.Operadoras;
+import com.api.neurotechMed_iD.models.Operadora;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,8 +9,8 @@ import java.util.UUID;
 
 
 @Repository
-public interface OperadorasRepository extends JpaRepository<Operadoras, Integer> {
+public interface OperadoraRepository extends JpaRepository<Operadora, Integer> {
     boolean existsByCnpj(String cnpj);
 
-    Optional<Operadoras> findById(UUID iD);
+    Optional<Operadora> findById(UUID iD);
 }

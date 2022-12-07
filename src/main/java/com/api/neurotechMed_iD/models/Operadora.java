@@ -1,14 +1,15 @@
 package com.api.neurotechMed_iD.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.UUID;
 
-@Table(name = "TB_Operadoras")
+@Table(name = "TB_Operadora")
 @Entity
 
 
-public class Operadoras {
+public class Operadora {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,17 +23,17 @@ public class Operadoras {
     @Column(name="cnpj", updatable = true, nullable = true)
     private String cnpj;
 
-    @Column(name="tipo_plano", updatable = true, nullable = true)
-    private String tipo_plano;
+    @Column(name="tipoPlano", updatable = true, nullable = true)
+    private String tipoPlano;
 
-    @Column(name="areas_atuacao", updatable = true, nullable = true)
-    private String areas_atuacao;
+    @Column(name="areasAtuacao", updatable = true, nullable = true)
+    private String areasAtuacao;
+
+    @Column(name="enderecoSede", updatable =true, nullable = true)
+    private String enderecoSede;
 
     @Column(name="especialidades", updatable = true, nullable = true)
     private String especialidades;
-
-    @Column(name="status", updatable = true, nullable = true)
-    private String status;
 
 
     public UUID getId() {
@@ -67,20 +68,28 @@ public class Operadoras {
         this.cnpj = cnpj;
     }
 
-    public String getTipo_plano() {
-        return tipo_plano;
+    public String getTipoPlano() {
+        return tipoPlano;
     }
 
-    public void setTipo_plano(String tipo_plano) {
-        this.tipo_plano = tipo_plano;
+    public void setTipoPlano(String tipoPlano) {
+        this.tipoPlano = tipoPlano;
     }
 
-    public String getAreas_atuacao() {
-        return areas_atuacao;
+    public String getAreasAtuacao() {
+        return areasAtuacao;
     }
 
-    public void setAreas_atuacao(String areas_atuacao) {
-        this.areas_atuacao = areas_atuacao;
+    public void setAreasAtuacao(String areasAtuacao) {
+        this.areasAtuacao = areasAtuacao;
+    }
+
+    public String getEnderecoSede() {
+        return enderecoSede;
+    }
+
+    public void setEnderecoSede(String enderecoSede) {
+        this.enderecoSede = enderecoSede;
     }
 
     public String getEspecialidades() {
@@ -91,11 +100,4 @@ public class Operadoras {
         this.especialidades = especialidades;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }

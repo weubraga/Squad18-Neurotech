@@ -1,18 +1,7 @@
 package com.api.neurotechMed_iD.dtos;
 
-
-
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
-/* Operadora:
-* Nome da operadora (obg, 100) ;
-* CNPJ (obg, 14);   
-* Tipos de planos (text, 50);
-* Endereço;
-* Regiões de atuação;
-* Especialidades */
 
 
 public class OperadoraDto {
@@ -27,15 +16,12 @@ public class OperadoraDto {
     private String areasDeAtuacao;
     @NotBlank
     @Size(max=50)
-    private String tipos_de_planos;
+    private String tiposDePlanos;
     @NotBlank
-    private String endereço_sede;
-    @NotBlank
-    private String regioes;
+    private String enderecoSede;
+
     @NotBlank
     private String especialidades;
-    @NotBlank
-    private String status;
 
     public String getCnpj() {
         return cnpj;
@@ -61,29 +47,22 @@ public class OperadoraDto {
         this.areasDeAtuacao = areasDeAtuacao;
     }
 
-    public String getTipos_de_planos() {
-        return tipos_de_planos;
+    public String getTiposDePlanos() {
+        return tiposDePlanos;
     }
 
-    public void setTipos_de_planos(String tipos_de_planos) {
-        this.tipos_de_planos = tipos_de_planos;
+    public void setTiposDePlanos(String tiposDePlanos) {
+        this.tiposDePlanos = tiposDePlanos;
     }
 
-    public String getEndereço_sede() {
-        return endereço_sede;
+    public String getEnderecoSede() {
+        return enderecoSede;
     }
 
-    public void setEndereço_sede(String endereço_sede) {
-        this.endereço_sede = endereço_sede;
+    public void setEnderecoSede(String enderecoSede) {
+        this.enderecoSede = enderecoSede;
     }
 
-    public String getRegioes() {
-        return regioes;
-    }
-
-    public void setRegioes(String regioes) {
-        this.regioes = regioes;
-    }
 
     public String getEspecialidades() {
         return especialidades;
@@ -93,11 +72,4 @@ public class OperadoraDto {
         this.especialidades = especialidades;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }

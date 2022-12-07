@@ -16,11 +16,11 @@ public class HospitalDto {
 
     @NotBlank
     @Size(max = 10)
-    private String cob_convenio;
+    private String cobConvenio;
 
     @NotBlank
     @Size(max = 10)
-    private String tipo_atendimento;
+    private String tipoAtendimento;
 
     public String getName() {
         return name;
@@ -38,19 +38,19 @@ public class HospitalDto {
         this.crm = crm;
     }
 
-    public String getCob_convenio() {
-        return cob_convenio;
+    public String getCobConvenio() {
+        return cobConvenio;
     }
 
-    public void setCob_convenio(String cob_convenio) {
-        this.cob_convenio = cob_convenio;
+    public void setCobConvenio(String cobConvenio) {
+        this.cobConvenio = cobConvenio;
     }
 
-    public String getTipo_atendimento() {
-        return tipo_atendimento;
+    public String getTipoAtendimento() {
+        return tipoAtendimento;
     }
 
-    public void setTipo_atendimento(String tipo_atendimento) {
-        this.tipo_atendimento = tipo_atendimento;
+    public void setTipoAtendimento(String tipoAtendimento) {
+        this.tipoAtendimento = tipoAtendimento;
     }
 }

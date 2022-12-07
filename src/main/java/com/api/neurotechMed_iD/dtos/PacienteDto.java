@@ -1,18 +1,8 @@
 package com.api.neurotechMed_iD.dtos;
 
-
-import javax.persistence.Id;
+import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-/* Paciente:
-* CPF ;
-* nome do paciente;   
-* número da carteirinha do plano de saúde;
-* Status do plano;
-* face id e biometria. */
-
 
 public class PacienteDto {
 
@@ -24,7 +14,7 @@ public class PacienteDto {
     private String name;
     @NotBlank
     @Size(max = 20)
-    private String num_carteirinha;
+    private String numCarteirinha;
     @NotBlank
     private String status;
 
@@ -44,12 +34,12 @@ public class PacienteDto {
         this.name = name;
     }
 
-    public String getNum_carteirinha() {
-        return num_carteirinha;
+    public String getNumCarteirinha() {
+        return numCarteirinha;
     }
 
-    public void setNum_carteirinha(String num_carteirinha) {
-        this.num_carteirinha = num_carteirinha;
+    public void setNumCarteirinha(String numCarteirinha) {
+        this.numCarteirinha = numCarteirinha;
     }
 
     public String getStatus() {

@@ -1,7 +1,6 @@
 package com.api.neurotechMed_iD.models;
 
 
-import java.util.List;
 import java.util.UUID;
 import javax.persistence.*;
 @Table(name = "TB_Paciente")
@@ -20,16 +19,16 @@ public class Paciente {
     private Hospital hospital;
 
     @ManyToOne
-    private Operadoras operadoras;
+    private Operadora operadora;
 
     @Column(name="cpf", updatable = true, nullable = true)
     private String cpf;
 
-    @Column(name="id_plano", updatable = true, nullable = true)
-    private String id_plano;
+    @Column(name="numCarteirinha", updatable = true, nullable = true)
+    private String numCarteirinha;
 
-    @Column(name="id_face", updatable = true, nullable = true)
-    private String id_face;
+    @Column(name="idFace", updatable = true, nullable = true)
+    private String idFace;
 
     @Column(name="status", updatable = true, nullable = true)
     private String status;
@@ -58,12 +57,12 @@ public class Paciente {
         this.hospital = hospital;
     }
 
-    public Operadoras getOperadoras() {
-        return operadoras;
+    public Operadora getOperadora() {
+        return operadora;
     }
 
-    public void setOperadoras(Operadoras operadoras) {
-        this.operadoras = operadoras;
+    public void setOperadora(Operadora operadora) {
+        this.operadora = operadora;
     }
 
     public String getCpf() {
@@ -74,20 +73,20 @@ public class Paciente {
         this.cpf = cpf;
     }
 
-    public String getId_plano() {
-        return id_plano;
+    public String getNumCarteirinha() {
+        return numCarteirinha;
     }
 
-    public void setId_plano(String id_plano) {
-        this.id_plano = id_plano;
+    public void setNumCarteirinha(String numCarteirinha) {
+        this.numCarteirinha = numCarteirinha;
     }
 
-    public String getId_face() {
-        return id_face;
+    public String getIdFace() {
+        return idFace;
     }
 
-    public void setId_face(String id_face) {
-        this.id_face = id_face;
+    public void setIdFace(String idFace) {
+        this.idFace = idFace;
     }
 
     public String getStatus() {
